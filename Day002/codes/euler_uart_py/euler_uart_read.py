@@ -3,8 +3,9 @@ import csv
 import threading
 import time
 
+
 # --- CONFIGURATION ---
-SERIAL_PORT = 'COM3'  # Change to '/dev/ttyUSB0' on Linux or '/dev/tty.usbserial-...' on Mac
+SERIAL_PORT = 'COM7'  # Change to '/dev/ttyUSB0' on Linux or '/dev/tty.usbserial-...' on Mac
 BAUD_RATE = 115200
 FILE_NAME = "imu_data_log.csv"
 
@@ -36,21 +37,23 @@ threading.Thread(target=key_listener, daemon=True).start()
 
 print(f"Listening to {SERIAL_PORT}...")
 
-with open(FILE_NAME, mode='w', newline='') as file:
+with open(FILE_NAME, mode='w', newline='', buffering=1) as file:
     writer = csv.writer(file)
     # Write Header
     writer.writerow(["Timestamp_ms", "ax", "ay", "az", "gx", "gy", "gz", "pitch", "roll", "yaw"])
+    file.flush()
 
     try:
         while not exit_program:
             if ser.in_waiting > 0:
-                line = ser.readline().decode('utf-8').strip()
-                
+                line = ser.readline().decode('utf-8', errors='replace').strip()
+
                 if logging:
                     data = line.split(',')
                     if len(data) == 10: # Ensure we got a full line
                         writer.writerow(data)
-                        # Optional: print(f"Logged: {data}")
+                        file.flush()
+                        print(f"Logged: {data}")
                         
     except KeyboardInterrupt:
         print("\nClosing...")

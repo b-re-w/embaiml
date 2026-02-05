@@ -1,0 +1,23 @@
+0. Enable the I2C bus
+sudo raspi-config
+Once configuration done
+sudo reboot
+
+1. Update and upgrade the system.
+sudo apt update
+sudo apt upgrade -y
+sudo apt install -y i2c-tools
+sudo apt install -y python3-pip
+sudo apt install -y python3-smbus
+
+2. Install Git
+sudo apt install git
+
+3. Create a folder named workshop in the home directory
+mkdir workshop
+
+4.Create a python virtual environment named wshopvenv
+python -m venv wshopvenv
+
+5. Activate the wshopvenv
+source wshopvenv/bin/activate
