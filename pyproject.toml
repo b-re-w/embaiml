@@ -7,4 +7,10 @@ requires-python = ">=3.12"
 dependencies = [
     "jupyterlab>=4.5.3",
     "pyserial>=3.5",
+    "scipy>=1.17.0",
+]
+
+[project.optional-dependencies]
+rpi = [
+    "mpu6050",
 ]
