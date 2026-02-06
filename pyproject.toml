@@ -12,5 +12,5 @@ dependencies = [
 
 [project.optional-dependencies]
 rpi = [
-    "mpu6050",
+    "mpu6050-raspberrypi",
 ]
