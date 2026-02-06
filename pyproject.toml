@@ -5,12 +5,15 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
-    "jupyterlab>=4.5.3",
     "pyserial>=3.5",
     "scipy>=1.17.0",
+    "numpy",
 ]
 
 [project.optional-dependencies]
+win = [
+    "jupyterlab>=4.5.3",
+]
 rpi = [
     "mpu6050-raspberrypi",
 ]
