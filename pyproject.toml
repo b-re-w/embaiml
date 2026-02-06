@@ -16,4 +16,5 @@ win = [
 ]
 rpi = [
     "mpu6050-raspberrypi",
+    "smbus>=1.1.post2",
 ]
