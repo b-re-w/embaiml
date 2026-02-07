@@ -3,7 +3,7 @@ name = "embaiml"
 version = "0.1.0"
 description = "UNLV 2026"
 readme = "README.md"
-requires-python = "==3.11.* || ==3.13.*"
+requires-python = ">=3.11,!=3.12.*,<3.14"
 dependencies = [
     "pyserial>=3.5",
     "scipy>=1.17.0",
