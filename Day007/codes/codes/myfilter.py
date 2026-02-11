@@ -105,7 +105,7 @@ def process_audio(file_path):
 # Run the script
 if __name__ == "__main__":
     # Specify your audio file path
-    file_path = 'original.wav'  # Replace with your actual file path
+    file_path = 'rec_49471.wav'  # Replace with your actual file path
     if os.path.exists(file_path):
         process_audio(file_path)
     else:
