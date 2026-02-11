@@ -15,7 +15,8 @@ dependencies = [
     "matplotlib>=3.10.8; platform_system != 'Linux' or platform_machine != 'armv7l'",
     "librosa; platform_system != 'Linux' or platform_machine != 'armv7l'",
     "numba>0.54.0; platform_system != 'Linux' or platform_machine != 'armv7l'",
-    "llvmlite; platform_system != 'Linux' or platform_machine != 'armv7l'"
+    "llvmlite; platform_system != 'Linux' or platform_machine != 'armv7l'",
+    "bmi160-i2c>=0.6; platform_system == 'Linux' and platform_machine == 'armv7l'"
 ]
 
 [[tool.uv.index]]
